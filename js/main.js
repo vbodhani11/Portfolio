@@ -143,8 +143,8 @@ function updateActiveNav(scrollY) {
 /* ── Theme toggle ────────────────────────────────────────── */
 function toggleTheme() {
   const isDark = htmlEl.dataset.theme === 'dark';
-  htmlEl.dataset.theme      = isDark ? 'light' : 'dark';
-  themeToggle.innerHTML     = isDark
+  htmlEl.dataset.theme  = isDark ? 'light' : 'dark';
+  themeToggle.innerHTML = isDark
     ? '<i class="fas fa-moon"></i>'
     : '<i class="fas fa-sun"></i>';
 }
@@ -187,8 +187,75 @@ themeToggle.addEventListener('click', toggleTheme);
 hamburger.addEventListener('click', toggleMobileMenu);
 scrollTopBtn.addEventListener('click', scrollToTop);
 
+/* ── Photo Switcher ──────────────────────────────────────── */
+function initPhotoSwitcher() {
+  const slides = document.querySelectorAll('.photo-slide');
+  const dots   = document.querySelectorAll('.photo-dot');
+  if (!slides.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function startAuto() {
+    timer = setInterval(next, 4000);
+  }
+
+  function stopAuto() {
+    clearInterval(timer);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopAuto();
+      goTo(i);
+      startAuto();
+    });
+  });
+
+  startAuto();
+}
+
+/* ── Project Filter ──────────────────────────────────────── */
+function initProjectFilter() {
+  const btns  = document.querySelectorAll('.pf-btn');
+  const cards = document.querySelectorAll('.project-card');
+  if (!btns.length) return;
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        const cats = card.dataset.category || '';
+        if (filter === 'all' || cats.includes(filter)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+}
+
 /* ── Initialise on DOMContentLoaded ─────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   typeWriter();
   initReveal();
+  initPhotoSwitcher();
+  initProjectFilter();
 });

@@ -8,12 +8,12 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Font Awesome icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- Portfolio stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -22,65 +22,58 @@
   <!-- Reading progress bar -->
   <div class="progress-bar" id="progressBar"></div>
 
-  <!-- ═══════════════════════════ NAVIGATION ═══════════════════════════ -->
+  <!-- ═══════════════ NAVIGATION ═══════════════ -->
   <nav id="navbar">
     <div class="nav-inner">
-      <div class="logo">VB</div>
+      <div class="logo">Vipul Bodhani</div>
 
       <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
       <div class="nav-actions">
         <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
         </button>
         <a href="mailto:vbodhani11@gmail.com" class="nav-cta">Hire Me</a>
       </div>
 
       <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
-  <!-- Mobile slide-down menu -->
+  <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
+    <a href="#home"       onclick="closeMobile()">Home</a>
     <a href="#about"      onclick="closeMobile()">About</a>
-    <a href="#skills"     onclick="closeMobile()">Skills</a>
     <a href="#experience" onclick="closeMobile()">Experience</a>
-    <a href="#projects"   onclick="closeMobile()">Projects</a>
-    <a href="#contact"    onclick="closeMobile()">Contact</a>
+    <a href="#skills"     onclick="closeMobile()">Skills</a>
+    <a href="#projects"      onclick="closeMobile()">Projects</a>
+    <a href="#testimonials"  onclick="closeMobile()">Testimonials</a>
+    <a href="#contact"       onclick="closeMobile()">Contact</a>
   </div>
 
-  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <!-- ═══════════════ HERO ═══════════════ -->
   <section class="hero" id="home">
-
-    <!-- Decorative backgrounds -->
-    <div class="hero-bg"></div>
-    <div class="grid-overlay"></div>
-    <div class="floating-shapes">
-      <div class="shape shape-1"></div>
-      <div class="shape shape-2"></div>
-      <div class="shape shape-3"></div>
-    </div>
-
     <div class="hero-inner">
 
-      <!-- Left: text content -->
+      <!-- Left: text -->
       <div class="hero-content">
         <div class="hero-badge">
           <div class="badge-dot"></div>
           Available for Full-time Roles
         </div>
 
-        <h1 class="hero-name">Hi, I'm <span>Vipul<br />Bodhani</span></h1>
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Vipul<br /><span>Bodhani</span></h1>
 
         <div class="hero-title">
           <span id="typedText"></span><span class="cursor"></span>
@@ -89,7 +82,7 @@
         <p class="hero-desc">
           Software Engineer &amp; Master's CS student at Purdue with <strong>6+ years</strong>
           building enterprise web apps, SAP ERP integrations, and AI/ML systems for Fortune 500
-          clients from React frontends to FastAPI backends and deep learning models.
+          clients, from React frontends to FastAPI backends and deep learning models.
         </p>
 
         <div class="hero-stats">
@@ -121,96 +114,247 @@
         </div>
 
         <div class="hero-socials">
-          <a href="https://github.com/vbodhani11"               target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/vipul-bodhani/"  target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="mailto:vbodhani11@gmail.com"                  class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
-          <a href="tel:2603485106"                               class="social-link" title="Phone"><i class="fas fa-phone"></i></a>
+          <a href="https://github.com/vbodhani11"              target="_blank" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/vipul-bodhani/" target="_blank" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:vbodhani11@gmail.com"                 class="social-link" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:2603485106"                              class="social-link" title="Phone"><i class="fas fa-phone"></i></a>
         </div>
       </div>
 
-      <!-- Right: profile card -->
+      <!-- Right: photo switcher -->
       <div class="hero-visual">
-        <div class="profile-card">
-          <div class="profile-avatar">VB</div>
-          <div class="profile-name">Vipul Bodhani</div>
-          <div class="profile-role">Software Engineer · SAP ABAP · AI/ML</div>
+        <div class="photo-switcher" id="photoSwitcher">
 
-          <div class="tech-chips">
-            <span class="chip">React</span>
-            <span class="chip">TypeScript</span>
-            <span class="chip green">FastAPI</span>
-            <span class="chip green">Node.js</span>
-            <span class="chip cyan">Python</span>
-            <span class="chip cyan">TensorFlow</span>
-            <span class="chip orange">SAP ABAP</span>
-            <span class="chip orange">S/4HANA</span>
+          <!-- Slide 1 – Professional -->
+          <div class="photo-slide active" data-index="0">
+            <img src="images/profile-pro.png" alt="Vipul – Professional" />
+            <div class="photo-slide-label">
+              <span class="ps-tag"><i class="fas fa-briefcase"></i> At Work</span>
+              <span class="ps-name">Vipul Bodhani</span>
+            </div>
           </div>
 
-          <div class="profile-metrics">
-            <div class="metric"><span class="metric-val">6+</span>  <span class="metric-key">Years Exp</span></div>
-            <div class="metric"><span class="metric-val">3.89</span><span class="metric-key">GPA</span></div>
-            <div class="metric"><span class="metric-val">F500</span><span class="metric-key">Clients</span></div>
-            <div class="metric"><span class="metric-val">5</span>   <span class="metric-key">Projects</span></div>
+          <!-- Slide 2 – Casual -->
+          <div class="photo-slide" data-index="1">
+            <img src="images/profile-casual.png" alt="Vipul – Casual" />
+            <div class="photo-slide-label">
+              <span class="ps-tag"><i class="fas fa-smile"></i> Off Duty</span>
+              <span class="ps-name">Vipul Bodhani</span>
+            </div>
           </div>
+
+          <!-- Navigation dots -->
+          <div class="photo-dots">
+            <button class="photo-dot active" data-target="0" aria-label="Professional photo"></button>
+            <button class="photo-dot"        data-target="1" aria-label="Casual photo"></button>
+          </div>
+
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
-  <section id="about">
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+  <section id="about" class="alt-section">
     <div class="section-inner">
-      <div class="section-label">About Me</div>
-      <h2 class="section-title">Building things that matter</h2>
-      <p class="section-sub">From ERP enterprise integrations to deep learning models, I love solving real-world problems end-to-end.</p>
 
       <div class="about-grid reveal">
-        <div class="about-text">
-          <p>I'm a <span class="highlight">Software Developer and Master's student in Computer Science</span> at Purdue University Fort Wayne (GPA 3.89), with over 6 years of hands-on industry experience designing, building, and deploying business applications and web services.</p>
-          <p>My career spans <span class="highlight">Finance, Supply Chain, HR, and Logistics</span> domains, working with Fortune 500 clients like <span class="highlight">John Deere, P&amp;G, E*Trade, and Bank of Maharashtra</span> through HCL Technologies, Capgemini, and Atos Syntel.</p>
-          <p>I'm equally comfortable writing <span class="highlight">React/TypeScript frontends, FastAPI/Node.js backends, SAP ABAP/S4HANA ERP integrations</span>, and applying <span class="highlight">AI/ML techniques</span> including LLM integration, RAG architectures, and deep learning models.</p>
-          <p>Currently interning at Purdue's Career Development Center, I'm building modular student tracking systems and interactive dashboards while pursuing my Master's degree.</p>
-        </div>
 
-        <div class="about-edu">
-          <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
-            <div>
-              <div class="edu-title">M.S. in Computer Science</div>
-              <div class="edu-org">Purdue University Fort Wayne</div>
-              <div class="edu-details">Fort Wayne, IN &nbsp;·&nbsp; Aug 2024 – Present</div>
-              <div class="gpa-badge"><i class="fas fa-star"></i> GPA: 3.89 / 4.00</div>
-            </div>
-          </div>
+        <!-- Left: heading + text -->
+        <div class="about-left">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Building things that matter</h2>
+          <p class="section-sub">From ERP enterprise integrations to deep learning models — I love solving real-world problems end-to-end.</p>
 
-          <div class="edu-card reveal">
-            <div class="edu-icon"><i class="fas fa-university"></i></div>
-            <div>
-              <div class="edu-title">B.S. in Computer Science</div>
-              <div class="edu-org">Sant Gadge Baba Amravati University</div>
-              <div class="edu-details">Amravati, India &nbsp;·&nbsp; Jun 2014 – May 2018</div>
-              <div class="gpa-badge"><i class="fas fa-star"></i> GPA: 3.54 / 4.00</div>
-            </div>
+          <div class="about-text">
+            <p>I'm a <strong>Software Developer and Master's student in Computer Science</strong> at Purdue University Fort Wayne (GPA 3.89), with over 6 years of hands-on industry experience designing, building, and deploying business applications and web services.</p>
+            <p>My career spans <strong>Finance, Supply Chain, HR, and Logistics</strong> domains, working with Fortune 500 clients like <strong>John Deere, P&amp;G, E*Trade, and Bank of Maharashtra</strong> through HCL Technologies, Capgemini, and Atos Syntel.</p>
+            <p>I'm equally comfortable writing <strong>React/TypeScript frontends, FastAPI/Node.js backends, SAP ABAP/S4HANA integrations</strong>, and applying <strong>AI/ML techniques</strong> including LLM integration, RAG architectures, and deep learning models.</p>
+            <p>Currently interning at Purdue's Career Development Center, building modular student tracking systems and interactive dashboards.</p>
           </div>
         </div>
+
+        <!-- Right: quick info card -->
+        <div class="about-info">
+          <div class="about-info-header">Quick Info</div>
+          <ul class="info-list">
+            <li><span class="info-key"><i class="fas fa-user"></i> Name</span><span class="info-val">Vipul Bodhani</span></li>
+            <li><span class="info-key"><i class="fas fa-map-marker-alt"></i> Location</span><span class="info-val">Fort Wayne, IN</span></li>
+            <li><span class="info-key"><i class="fas fa-graduation-cap"></i> Degree</span><span class="info-val">M.S. Computer Science</span></li>
+            <li><span class="info-key"><i class="fas fa-university"></i> University</span><span class="info-val">Purdue Fort Wayne</span></li>
+            <li><span class="info-key"><i class="fas fa-star"></i> GPA</span><span class="info-val">3.89 / 4.00</span></li>
+            <li><span class="info-key"><i class="fas fa-envelope"></i> Email</span><span class="info-val">vbodhani11@gmail.com</span></li>
+            <li><span class="info-key"><i class="fas fa-briefcase"></i> Status</span><span class="info-val available">Open to Work</span></li>
+          </ul>
+          <a href="https://www.linkedin.com/in/vipul-bodhani/" target="_blank" class="btn-primary" style="margin-top:1.25rem;display:inline-flex;">
+            <i class="fab fa-linkedin-in"></i> View LinkedIn
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
-  <section id="skills" class="skills-section">
+  <!-- ═══════════════ EDUCATION ═══════════════ -->
+  <section id="education">
+    <div class="section-inner">
+      <div class="section-label">Academics</div>
+      <h2 class="section-title">Education</h2>
+      <p class="section-sub">Academic foundation driving my technical curiosity and research interests.</p>
+
+      <div class="edu-grid reveal">
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <div class="edu-degree">M.S. in Computer Science</div>
+            <div class="edu-school">Purdue University Fort Wayne</div>
+            <div class="edu-meta">Fort Wayne, IN &nbsp;·&nbsp; Aug 2024 – Present</div>
+            <div class="edu-gpa"><i class="fas fa-star"></i> GPA: 3.89 / 4.00</div>
+            <p class="edu-note">Focus: AI/ML, Explainable AI, Full-Stack Development, Systems Design</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <div class="edu-body">
+            <div class="edu-degree">B.S. in Computer Science</div>
+            <div class="edu-school">Sant Gadge Baba Amravati University</div>
+            <div class="edu-meta">Amravati, India &nbsp;·&nbsp; Jun 2014 – May 2018</div>
+            <div class="edu-gpa"><i class="fas fa-star"></i> GPA: 3.54 / 4.00</div>
+            <p class="edu-note">Foundation in algorithms, data structures, databases, and software engineering principles.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+  <section id="experience" class="alt-section">
+    <div class="section-inner">
+      <div class="section-label">Career</div>
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-sub">6+ years delivering high-impact solutions for Fortune 500 companies across 4 organizations.</p>
+
+      <div class="timeline reveal">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Graduate Software Engineer Intern</div>
+                <div class="exp-company"><i class="fas fa-building"></i> Purdue University Fort Wayne – Career Development Center</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Fort Wayne, IN</div>
+              </div>
+              <div class="exp-date current"><i class="fas fa-circle pulse-dot"></i> Feb 2025 – Present</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Designed and developed modular Node.js and Python back-end systems for student internship &amp; co-op tracking, improving data consistency and reporting efficiency by <strong>40%</strong>.</li>
+              <li>Built interactive React dashboards to visualize internship placement trends, enabling data-driven decisions for department leadership.</li>
+              <li>Managed Handshake platform back-end to maintain career listings with controls compliance and data integrity.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="tech-tag">Node.js</span><span class="tech-tag">Python</span>
+              <span class="tech-tag">React</span><span class="tech-tag">Dashboard</span>
+              <span class="tech-tag">Handshake API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Senior Software Engineer</div>
+                <div class="exp-company"><i class="fas fa-building"></i> HCL Technologies &nbsp;·&nbsp; Client: John Deere</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+              </div>
+              <div class="exp-date">Jul 2023 – Jul 2024</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Led requirements gathering, systems design, and delivery of OO-ABAP solutions for Order Management on S/4HANA; improved order processing accuracy by <strong>60%</strong> and reduced dealer turnaround by <strong>35%</strong>.</li>
+              <li>Built scalable OData V4 REST APIs, CDS Views, AMDP, and RAP back-end integrations aligned with SAP Clean Core; evaluated third-party integrations for Supply Chain workflows.</li>
+              <li>Designed SAP Analytics Cloud (SAC) dashboards connected to S/4HANA live data for Order Management and dealer KPIs.</li>
+              <li>Led production support, ABAP/HANA performance tuning, root-cause debugging, and new team member onboarding.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">S/4HANA</span>
+              <span class="tech-tag">OData V4</span><span class="tech-tag">CDS Views</span>
+              <span class="tech-tag">AMDP</span><span class="tech-tag">RAP</span>
+              <span class="tech-tag">SAP Analytics Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Engineer</div>
+                <div class="exp-company"><i class="fas fa-building"></i> Capgemini &nbsp;·&nbsp; Client: Bank of Maharashtra</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+              </div>
+              <div class="exp-date">Nov 2021 – Jul 2023</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Gathered HR and Finance requirements; developed Classical Reports, Adobe Forms, ALV Reports, Function Modules, BADIs, User Exits, and OData services, improving reporting efficiency by <strong>45%</strong>.</li>
+              <li>Built modular ETL logic and analytical reports for payroll, headcount, compliance, and audit workflows with full controls compliance.</li>
+              <li>Streamlined RICEFW development and third-party integration via SAP PI/PO for core banking workflows.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">ALV Reports</span>
+              <span class="tech-tag">Adobe Forms</span><span class="tech-tag">SAP PI/PO</span>
+              <span class="tech-tag">BADIs</span><span class="tech-tag">ETL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="exp-card">
+            <div class="exp-header">
+              <div>
+                <div class="exp-role">Software Engineer</div>
+                <div class="exp-company"><i class="fas fa-building"></i> Atos Syntel &nbsp;·&nbsp; Clients: P&amp;G, E*Trade</div>
+                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
+              </div>
+              <div class="exp-date">Aug 2018 – Nov 2021</div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Enhanced and maintained SAP ABAP reports, Function Modules, BDC programs, and User Exits for Finance, Supply Chain, and HR workflows across FMCG and financial services.</li>
+              <li>Designed HTML-based email templates integrated with SAP back-end; reduced manual workload by <strong>55%</strong> and improved process consistency by <strong>85%</strong>.</li>
+              <li>Conducted unit and regression testing, produced technical documentation, and delivered user training for stable controlled releases.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">BDC</span>
+              <span class="tech-tag">User Exits</span><span class="tech-tag">Function Modules</span>
+              <span class="tech-tag">HTML Templates</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS ═══════════════ -->
+  <section id="skills">
     <div class="section-inner">
       <div class="section-label">Tech Stack</div>
       <h2 class="section-title">Skills &amp; Technologies</h2>
-      <p class="section-sub">A broad toolkit spanning full-stack development, enterprise ERP, cloud infrastructure, and AI/ML.</p>
+      <p class="section-sub">A broad toolkit spanning full-stack development, enterprise ERP, cloud, and AI/ML.</p>
 
       <div class="skills-grid reveal">
 
         <div class="skill-cat">
           <div class="skill-cat-header">
             <div class="skill-cat-icon purple"><i class="fas fa-code"></i></div>
-            <div class="skill-cat-title">Web &amp; Full-Stack Development</div>
+            <div class="skill-cat-title">Web &amp; Full-Stack</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">React.js</span><span class="skill-tag">TypeScript</span>
@@ -244,7 +388,7 @@
           <div class="skill-tags">
             <span class="skill-tag">AWS (Lambda, EKS, SageMaker)</span>
             <span class="skill-tag">GCP (BigQuery, Cloud Run)</span>
-            <span class="skill-tag">Docker</span><span class="skill-tag">CI/CD Pipelines</span>
+            <span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span>
             <span class="skill-tag">MLflow</span><span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span>
             <span class="skill-tag">ETL Pipelines</span>
@@ -254,7 +398,7 @@
         <div class="skill-cat">
           <div class="skill-cat-header">
             <div class="skill-cat-icon green"><i class="fas fa-brain"></i></div>
-            <div class="skill-cat-title">AI / ML / Generative AI</div>
+            <div class="skill-cat-title">AI / ML / Gen AI</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">LLM Integration</span><span class="skill-tag">RAG Architectures</span>
@@ -262,7 +406,7 @@
             <span class="skill-tag">PyTorch</span><span class="skill-tag">Keras</span>
             <span class="skill-tag">scikit-learn</span><span class="skill-tag">Hugging Face</span>
             <span class="skill-tag">BERT</span><span class="skill-tag">XGBoost</span>
-            <span class="skill-tag">Pandas / NumPy</span><span class="skill-tag">Vector Databases</span>
+            <span class="skill-tag">Pandas / NumPy</span><span class="skill-tag">Vector DBs</span>
           </div>
         </div>
 
@@ -276,19 +420,18 @@
             <span class="skill-tag">Integrated Gradients</span><span class="skill-tag">OpenCV</span>
             <span class="skill-tag">MediaPipe</span><span class="skill-tag">Bi-LSTM</span>
             <span class="skill-tag">GloVe</span><span class="skill-tag">TF-IDF</span>
-            <span class="skill-tag">SVM</span><span class="skill-tag">NER</span>
-            <span class="skill-tag">Sentiment Analysis</span>
+            <span class="skill-tag">SVM</span><span class="skill-tag">Sentiment Analysis</span>
           </div>
         </div>
 
         <div class="skill-cat">
           <div class="skill-cat-header">
             <div class="skill-cat-icon red"><i class="fas fa-sitemap"></i></div>
-            <div class="skill-cat-title">Systems Design &amp; Engineering</div>
+            <div class="skill-cat-title">Engineering &amp; Process</div>
           </div>
           <div class="skill-tags">
-            <span class="skill-tag">Requirements Gathering</span>
             <span class="skill-tag">Systems Design</span>
+            <span class="skill-tag">Requirements Gathering</span>
             <span class="skill-tag">Modular Architecture</span>
             <span class="skill-tag">Controls Compliance</span>
             <span class="skill-tag">Testing &amp; QA</span>
@@ -302,254 +445,156 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ EXPERIENCE ═══════════════════════════ -->
-  <section id="experience">
-    <div class="section-inner">
-      <div class="section-label">Career</div>
-      <h2 class="section-title">Professional Experience</h2>
-      <p class="section-sub">6+ years delivering high-impact solutions for Fortune 500 companies across 4 organizations.</p>
-
-      <div class="timeline reveal">
-
-        <!-- Job 1 – Purdue Intern -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-role">Graduate Software Engineer Intern</div>
-                <div class="exp-company"><i class="fas fa-building"></i> Purdue University Fort Wayne – Career Development Center</div>
-                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Fort Wayne, IN</div>
-              </div>
-              <div class="exp-date current">
-                <i class="fas fa-circle" style="font-size:.5rem"></i> Feb 2025 – Present
-              </div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Gathered business requirements from career advisors; designed and developed modular Node.js and Python back-end systems for student internship &amp; co-op tracking, improving data consistency and reporting efficiency by <strong>40%</strong>.</li>
-              <li>Built and deployed interactive React dashboards to visualize internship placement trends, enabling data-driven decisions for department leadership.</li>
-              <li>Managed Handshake platform back-end to keep career listings current with controls compliance and data integrity.</li>
-            </ul>
-            <div class="exp-tech">
-              <span class="tech-tag">Node.js</span><span class="tech-tag">Python</span>
-              <span class="tech-tag">React</span><span class="tech-tag">Dashboard</span>
-              <span class="tech-tag">Handshake API</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Job 2 – HCL / John Deere -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-role">Senior Software Engineer</div>
-                <div class="exp-company"><i class="fas fa-building"></i> HCL Technologies &nbsp;·&nbsp; Client: John Deere</div>
-                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
-              </div>
-              <div class="exp-date">Jul 2023 – Jul 2024</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Led requirements gathering, systems design, and delivery of OO-ABAP solutions for Order Management on S/4HANA; improved order processing accuracy by <strong>60%</strong> and reduced dealer turnaround by <strong>35%</strong>.</li>
-              <li>Built scalable OData V4 REST APIs, CDS Views, AMDP, and RAP back-end integrations aligned with SAP Clean Core; evaluated third-party integrations for Supply Chain workflows.</li>
-              <li>Designed SAP Analytics Cloud (SAC) dashboards connected to S/4HANA live data for Order Management and dealer operations KPIs.</li>
-              <li>Led production support, ABAP/HANA performance tuning, root-cause debugging, and onboarding of new team members.</li>
-            </ul>
-            <div class="exp-tech">
-              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">S/4HANA</span>
-              <span class="tech-tag">OData V4</span><span class="tech-tag">CDS Views</span>
-              <span class="tech-tag">AMDP</span><span class="tech-tag">RAP</span>
-              <span class="tech-tag">SAP Analytics Cloud</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Job 3 – Capgemini / Bank of Maharashtra -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-role">Software Engineer </div>
-                <div class="exp-company"><i class="fas fa-building"></i> Capgemini &nbsp;·&nbsp; Client: Bank of Maharashtra</div>
-                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
-              </div>
-              <div class="exp-date">Nov 2021 – Jul 2023</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Gathered HR and Finance requirements; developed Classical Reports, Adobe Forms, ALV Reports, Function Modules, BADIs, User Exits, and OData services, improving reporting efficiency by <strong>45%</strong>.</li>
-              <li>Built modular, well-documented ETL logic and analytical reports for payroll, headcount, compliance, and audit workflows with full controls compliance.</li>
-              <li>Streamlined RICEFW development and third-party application integration via SAP PI/PO for core banking workflows.</li>
-            </ul>
-            <div class="exp-tech">
-              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">ALV Reports</span>
-              <span class="tech-tag">Adobe Forms</span><span class="tech-tag">SAP PI/PO</span>
-              <span class="tech-tag">BADIs</span><span class="tech-tag">ETL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Job 4 – Atos Syntel / P&G, E*Trade -->
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="exp-card">
-            <div class="exp-header">
-              <div>
-                <div class="exp-role">Software Engineer </div>
-                <div class="exp-company"><i class="fas fa-building"></i> Atos Syntel &nbsp;·&nbsp; Clients: P&amp;G, E*Trade</div>
-                <div class="exp-location"><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</div>
-              </div>
-              <div class="exp-date">Aug 2018 – Nov 2021</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Enhanced and maintained SAP ABAP reports, Function Modules, BDC programs, and User Exits for Finance, Supply Chain, and HR workflows across FMCG and financial services.</li>
-              <li>Designed HTML-based email templates integrated with SAP back-end; reduced manual workload by <strong>55%</strong> and improved process consistency by <strong>85%</strong>.</li>
-              <li>Conducted unit and regression testing, produced technical documentation, and delivered user training for stable controlled releases.</li>
-            </ul>
-            <div class="exp-tech">
-              <span class="tech-tag">SAP ABAP</span><span class="tech-tag">BDC</span>
-              <span class="tech-tag">User Exits</span><span class="tech-tag">Function Modules</span>
-              <span class="tech-tag">HTML Templates</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
-  <section id="projects" class="projects-section">
+  <!-- ═══════════════ PROJECTS ═══════════════ -->
+  <section id="projects" class="alt-section">
     <div class="section-inner">
       <div class="section-label">Work</div>
       <h2 class="section-title">Featured Projects</h2>
-      <p class="section-sub">End-to-end applications spanning deep learning, full-stack web development, NLP, and explainable AI.</p>
+      <p class="section-sub">End-to-end apps spanning deep learning, full-stack web, NLP, and explainable AI.</p>
 
-      <div class="projects-grid reveal">
+      <!-- Filter tabs -->
+      <div class="project-filters reveal">
+        <button class="pf-btn active" data-filter="all">All</button>
+        <button class="pf-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="pf-btn" data-filter="aiml">AI · ML</button>
+        <button class="pf-btn" data-filter="research">Research</button>
+      </div>
 
-        <!-- Deepfake Detector -->
-        <div class="project-card">
+      <div class="projects-grid reveal" id="projectsGrid">
+
+        <div class="project-card" data-category="aiml fullstack">
           <div class="project-thumb thumb-1">
             <span class="thumb-icon">🎭</span>
-            <div class="project-accent accent-purple"></div>
             <span class="project-badge">Featured</span>
+            <div class="project-overlay">
+              <p>XceptionNet deep learning + Grad-CAM explainability. JWT auth, OpenCV face detection, Docker deployment.</p>
+              <a href="https://github.com/vbodhani11/Deepfake-Detector" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
           </div>
           <div class="project-body">
+            <div class="project-meta"><span class="project-cat cat-aiml">AI · ML</span><span class="project-cat cat-fullstack">Full-Stack</span></div>
             <div class="project-title">Deepfake Detector</div>
-            <div class="project-desc">
-              Full-stack deepfake detection system with a React + TypeScript frontend, FastAPI REST backend, PostgreSQL pipeline, and XceptionNet deep learning model. Features Grad-CAM explainability, OpenCV/MediaPipe face detection, JWT auth, and Docker deployment.
-            </div>
+            <p class="project-desc">React + TypeScript frontend, FastAPI backend, PostgreSQL pipeline, XceptionNet model with Grad-CAM explainability and Docker deployment.</p>
             <div class="project-tags">
-              <span class="project-tag">React</span><span class="project-tag">TypeScript</span>
-              <span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span>
-              <span class="project-tag">Xception</span><span class="project-tag">Grad-CAM</span>
-              <span class="project-tag">Docker</span><span class="project-tag">OpenCV</span>
+              <span class="project-tag">React</span><span class="project-tag">FastAPI</span>
+              <span class="project-tag">XceptionNet</span><span class="project-tag">Docker</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/vbodhani11/Deepfake-Detector" target="_blank" class="project-link github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
+              <a href="https://github.com/vbodhani11/Deepfake-Detector" target="_blank" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Campus Marketplace -->
-        <div class="project-card">
+        <div class="project-card" data-category="fullstack">
           <div class="project-thumb thumb-2">
             <span class="thumb-icon">🛒</span>
-            <div class="project-accent accent-blue"></div>
+            <div class="project-overlay">
+              <p>Stripe payments, Supabase Auth, Cypress E2E tests. Live on Render + Google Cloud.</p>
+              <div style="display:flex;gap:.5rem;">
+                <a href="https://github.com/vbodhani11/Group3_Campus_Marketplace" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> Code</a>
+                <a href="https://group3-campus-marketplace-frontend.onrender.com" target="_blank" class="overlay-btn overlay-btn-green"><i class="fas fa-external-link-alt"></i> Live</a>
+              </div>
+            </div>
           </div>
           <div class="project-body">
+            <div class="project-meta"><span class="project-cat cat-fullstack">Full-Stack</span></div>
             <div class="project-title">Campus Marketplace</div>
-            <div class="project-desc">
-              Full-stack e-commerce platform for university students to buy and sell items within their campus community. Built with React, TypeScript, Express.js, Supabase (PostgreSQL + Auth), Stripe payments, and Cypress E2E tests. Deployed on Render and Google Cloud.
-            </div>
+            <p class="project-desc">E-commerce platform for university students. React, TypeScript, Express.js, Supabase, Stripe payments — deployed on Render and GCP.</p>
             <div class="project-tags">
               <span class="project-tag">React</span><span class="project-tag">TypeScript</span>
-              <span class="project-tag">Express.js</span><span class="project-tag">Supabase</span>
-              <span class="project-tag">Stripe</span><span class="project-tag">Cypress</span>
-              <span class="project-tag">GCP</span>
+              <span class="project-tag">Supabase</span><span class="project-tag">Stripe</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/vbodhani11/Group3_Campus_Marketplace" target="_blank" class="project-link github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
-              <a href="https://group3-campus-marketplace-frontend.onrender.com" target="_blank" class="project-link demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
+              <a href="https://github.com/vbodhani11/Group3_Campus_Marketplace" target="_blank" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://group3-campus-marketplace-frontend.onrender.com" target="_blank" class="project-link demo"><i class="fas fa-external-link-alt"></i> Live Demo</a>
             </div>
           </div>
         </div>
 
-        <!-- Toxic Comment Detection -->
-        <div class="project-card">
+        <div class="project-card" data-category="fullstack">
+          <div class="project-thumb thumb-6">
+            <span class="thumb-icon">📅</span>
+            <div class="project-overlay">
+              <p>Role-based dashboards (admin, organizer, participant) with smart calendar and real-time event availability.</p>
+              <a href="#" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta"><span class="project-cat cat-fullstack">Full-Stack</span></div>
+            <div class="project-title">MeetMatrix – Event Management</div>
+            <p class="project-desc">Role-based event management app with smart calendar integration, real-time availability tracking, and interactive dashboards for admin, organizer, and participant roles.</p>
+            <div class="project-tags">
+              <span class="project-tag">React</span><span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span><span class="project-tag">Express</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card" data-category="aiml research">
           <div class="project-thumb thumb-3">
             <span class="thumb-icon">🧠</span>
-            <div class="project-accent accent-green"></div>
+            <div class="project-overlay">
+              <p>Outperformed baseline by 18% on F1. SHAP + Integrated Gradients adversarial robustness analysis.</p>
+              <a href="https://github.com/bodhvm01/dual-stage-toxic-comment-detection-system" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
           </div>
           <div class="project-body">
+            <div class="project-meta"><span class="project-cat cat-aiml">AI · ML</span><span class="project-cat cat-research">Research</span></div>
             <div class="project-title">Toxic Comment Detection</div>
-            <div class="project-desc">
-              Dual-stage NLP pipeline for toxic content classification using TF-IDF, GloVe, Bi-LSTM, Logistic Regression, and SVM. Achieved 89.5% training and 78.3% test accuracy, outperforming baseline by 18% on F1. Includes SHAP and Integrated Gradients adversarial robustness analysis.
-            </div>
+            <p class="project-desc">Dual-stage NLP pipeline — TF-IDF, GloVe, Bi-LSTM, Logistic Regression, SVM — achieving 89.5% training accuracy with adversarial robustness analysis.</p>
             <div class="project-tags">
               <span class="project-tag">Python</span><span class="project-tag">Bi-LSTM</span>
-              <span class="project-tag">GloVe</span><span class="project-tag">TF-IDF</span>
-              <span class="project-tag">SHAP</span><span class="project-tag">SVM</span>
-              <span class="project-tag">NLP</span>
+              <span class="project-tag">SHAP</span><span class="project-tag">NLP</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/bodhvm01/dual-stage-toxic-comment-detection-system" target="_blank" class="project-link github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
+              <a href="https://github.com/bodhvm01/dual-stage-toxic-comment-detection-system" target="_blank" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Course Resource Library -->
-        <div class="project-card">
+        <div class="project-card" data-category="fullstack">
           <div class="project-thumb thumb-4">
             <span class="thumb-icon">📚</span>
-            <div class="project-accent accent-violet"></div>
+            <div class="project-overlay">
+              <p>Nodemailer email notifications for registration confirmations. Role-based dashboards for students and admins.</p>
+              <a href="https://github.com/bodhvm01/Course_library" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
           </div>
           <div class="project-body">
+            <div class="project-meta"><span class="project-cat cat-fullstack">Full-Stack</span></div>
             <div class="project-title">Course Resource Library</div>
-            <div class="project-desc">
-              A full-stack course resource management platform allowing students to discover, upload, and organize academic resources. Features a Node.js/Express backend with a React frontend, supporting rich content search and categorization.
-            </div>
+            <p class="project-desc">Full-stack learning platform with role-based dashboards, quiz management, progress tracking, and automated email notifications via Nodemailer.</p>
             <div class="project-tags">
-              <span class="project-tag">JavaScript</span><span class="project-tag">Node.js</span>
-              <span class="project-tag">Express.js</span><span class="project-tag">React</span>
+              <span class="project-tag">React</span><span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span><span class="project-tag">Nodemailer</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/bodhvm01/Course_library" target="_blank" class="project-link github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
+              <a href="https://github.com/bodhvm01/Course_library" target="_blank" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- XAI Healthcare -->
-        <div class="project-card">
+        <div class="project-card" data-category="aiml research">
           <div class="project-thumb thumb-5">
             <span class="thumb-icon">🏥</span>
-            <div class="project-accent accent-teal"></div>
+            <div class="project-overlay">
+              <p>Ethical AI Proposal with fairness analysis and model calibration for transparent clinical AI predictions.</p>
+              <a href="https://github.com/vbodhani11/XAI-Healthcare-Diagnostics" target="_blank" class="overlay-btn"><i class="fab fa-github"></i> View Code</a>
+            </div>
           </div>
           <div class="project-body">
-            <div class="project-title">Explainable AI – Healthcare Diagnostics</div>
-            <div class="project-desc">
-              Research-grade XAI system applying SHAP, Grad-CAM, and Integrated Gradients to medical diagnostic models. Includes an Ethical AI Proposal with fairness analysis and model calibration techniques to ensure transparent and trustworthy clinical AI predictions.
-            </div>
+            <div class="project-meta"><span class="project-cat cat-research">Research</span><span class="project-cat cat-aiml">AI · ML</span></div>
+            <div class="project-title">Explainable AI – Healthcare</div>
+            <p class="project-desc">XAI system applying SHAP, Grad-CAM, and Integrated Gradients to medical diagnostics with an Ethical AI Proposal covering fairness and model calibration.</p>
             <div class="project-tags">
-              <span class="project-tag">Python</span><span class="project-tag">SHAP</span>
-              <span class="project-tag">Grad-CAM</span><span class="project-tag">XAI</span>
-              <span class="project-tag">Healthcare AI</span><span class="project-tag">Ethical AI</span>
+              <span class="project-tag">SHAP</span><span class="project-tag">Grad-CAM</span>
+              <span class="project-tag">XAI</span><span class="project-tag">Ethical AI</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/vbodhani11/XAI-Healthcare-Diagnostics" target="_blank" class="project-link github">
-                <i class="fab fa-github"></i> GitHub
-              </a>
+              <a href="https://github.com/vbodhani11/XAI-Healthcare-Diagnostics" target="_blank" class="project-link github"><i class="fab fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
@@ -558,91 +603,104 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
-  <section id="contact">
+  <!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+  <section id="testimonials">
     <div class="section-inner">
-      <div class="section-label">Let's Talk</div>
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-sub">I'm actively seeking full-time software engineering roles. Let's connect!</p>
+      <div class="section-label">Recommendations</div>
+      <h2 class="section-title">What People Say</h2>
+      <p class="section-sub">Recommendations from colleagues and supervisors on LinkedIn.</p>
 
-      <div class="contact-grid reveal">
+      <div class="testi-grid reveal">
 
-        <div class="contact-info">
-          <h3>Open to opportunities</h3>
-          <p>Whether you have a role in mind, want to collaborate on a project, or just want to say hi — my inbox is always open. I typically respond within 24 hours.</p>
-
-          <div class="contact-items">
-            <a href="mailto:vbodhani11@gmail.com" class="contact-item">
-              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-              <div>
-                <div class="contact-label">Email</div>
-                <div class="contact-val">vbodhani11@gmail.com</div>
-              </div>
-            </a>
-
-            <a href="tel:2603485106" class="contact-item">
-              <div class="contact-icon"><i class="fas fa-phone"></i></div>
-              <div>
-                <div class="contact-label">Phone</div>
-                <div class="contact-val">(260) 348-5106</div>
-              </div>
-            </a>
-
-            <a href="https://www.linkedin.com/in/vipul-bodhani/" target="_blank" class="contact-item">
-              <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-              <div>
-                <div class="contact-label">LinkedIn</div>
-                <div class="contact-val">linkedin.com/in/vipul-bodhani</div>
-              </div>
-            </a>
-
-            <a href="https://github.com/vbodhani11" target="_blank" class="contact-item">
-              <div class="contact-icon"><i class="fab fa-github"></i></div>
-              <div>
-                <div class="contact-label">GitHub</div>
-                <div class="contact-val">github.com/vbodhani11</div>
-              </div>
-            </a>
+        <div class="testi-card">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testi-text">I had the pleasure of working with Vipul Bodhani as a Graduate Assistant in the Career Center during my tenure there. Vipul consistently impressed me with her strong work ethic, eagerness to learn, and positive attitude, which made her an invaluable part of our team. She quickly mastered a wide range of technical responsibilities, including data entry, database management, technical troubleshooting and diagnostics, and IT support. Vipul is also highly proficient with software tools such as Qualtrics, Handshake, and Excel — and what she doesn't know, she learns both quickly and effectively. She has the rare ability to combine her Computer Science background with strong interpersonal and problem-solving skills, making her contributions impactful and lasting. I highly recommend her without hesitation.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JS</div>
+            <div>
+              <div class="testi-name">Jackie Stancil</div>
+              <div class="testi-role">Executive Director (Retired), Career Development Center · Purdue Fort Wayne</div>
+            </div>
           </div>
         </div>
 
-        <div class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input id="firstName" type="text" placeholder="John" />
+        <div class="testi-card">
+          <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+          <p class="testi-text">I had the pleasure of managing Vipul for six months while she was on our team. Due to global teaming, we only met in person once, but her positive impact was clear from the start. Despite her relatively short time on the team, Vipul quickly adapted to our complex product environment and performed exceptionally well. Her ability to navigate the challenges of our product with curiosity and energy was impressive, and she consistently approached her work with a positive attitude. What truly stood out was her collaboration with her teammates — she was easy to get along with, and her enthusiasm made her a pleasure to work with. Although she left to pursue an advanced degree, I have no doubt she will continue to excel. I highly recommend Vipul for her knowledge, adaptability, and positive team spirit.</p>
+          <div class="testi-author">
+            <div class="testi-avatar">AD</div>
+            <div>
+              <div class="testi-name">Aimee DeGrauwe, M.S.</div>
+              <div class="testi-role">Transformational Data &amp; Analytics &amp; Technical Product Leader · Managed Vipul directly</div>
             </div>
-            <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input id="lastName" type="text" placeholder="Smith" />
-            </div>
           </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" type="email" placeholder="john@company.com" />
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" placeholder="Software Engineer Role – [Company]" />
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me about the role or project..."></textarea>
-          </div>
-
-          <button class="form-submit" onclick="handleFormSubmit(this)">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <!-- ═══════════════ CONTACT ═══════════════ -->
+  <section id="contact" class="alt-section">
+    <div class="section-inner">
+      <div class="contact-cta reveal">
+
+        <div class="contact-cta-text">
+          <div class="section-label">Let's Talk</div>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="contact-blurb">I'm actively seeking full-time Software Engineering roles. Whether you have a position in mind, want to collaborate, or just want to say hi — reach out. I respond within 24 hours.</p>
+          <a href="mailto:vbodhani11@gmail.com" class="btn-primary contact-email-btn">
+            <i class="fas fa-paper-plane"></i> Say Hello
+          </a>
+        </div>
+
+        <div class="contact-cards">
+          <a href="mailto:vbodhani11@gmail.com" class="ccard">
+            <div class="ccard-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"><i class="fas fa-envelope"></i></div>
+            <div class="ccard-body">
+              <div class="ccard-label">Email</div>
+              <div class="ccard-val">vbodhani11@gmail.com</div>
+            </div>
+            <i class="fas fa-arrow-right ccard-arrow"></i>
+          </a>
+          <a href="tel:2603485106" class="ccard">
+            <div class="ccard-icon" style="background:linear-gradient(135deg,#10b981,#059669)"><i class="fas fa-phone"></i></div>
+            <div class="ccard-body">
+              <div class="ccard-label">Phone</div>
+              <div class="ccard-val">(260) 348-5106</div>
+            </div>
+            <i class="fas fa-arrow-right ccard-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/vipul-bodhani/" target="_blank" class="ccard">
+            <div class="ccard-icon" style="background:linear-gradient(135deg,#0a66c2,#0077b5)"><i class="fab fa-linkedin-in"></i></div>
+            <div class="ccard-body">
+              <div class="ccard-label">LinkedIn</div>
+              <div class="ccard-val">linkedin.com/in/vipul-bodhani</div>
+            </div>
+            <i class="fas fa-arrow-right ccard-arrow"></i>
+          </a>
+          <a href="https://github.com/vbodhani11" target="_blank" class="ccard">
+            <div class="ccard-icon" style="background:linear-gradient(135deg,#374151,#1f2937)"><i class="fab fa-github"></i></div>
+            <div class="ccard-body">
+              <div class="ccard-label">GitHub</div>
+              <div class="ccard-val">github.com/vbodhani11</div>
+            </div>
+            <i class="fas fa-arrow-right ccard-arrow"></i>
+          </a>
+          <div class="ccard no-hover">
+            <div class="ccard-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="ccard-body">
+              <div class="ccard-label">Location</div>
+              <div class="ccard-val">Fort Wayne, Indiana</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer>
     <div class="footer-inner">
       <div class="footer-logo">Vipul Bodhani</div>
@@ -655,12 +713,11 @@
     </div>
   </footer>
 
-  <!-- Scroll-to-top button -->
+  <!-- Scroll-to-top -->
   <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Portfolio scripts -->
   <script src="js/main.js"></script>
 
 </body>
