@@ -1,50 +1,27 @@
 /* =============================================================
-   animations.css
-   All @keyframes definitions and scroll-triggered reveal classes.
-   Referenced by styles.css via @import and index.html via <link>.
+   animations.css  –  Keyframes + scroll-reveal classes
    ============================================================= */
 
-/* ── Entrance animations (hero stagger) ── */
+/* ── Entrance animations ── */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
 
-/* ── Background shape float ── */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    transform: translateY(-30px) scale(1.05);
-  }
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Availability badge pulse ring ── */
+/* ── Availability badge pulse ── */
 @keyframes pulse {
-  0%, 100% {
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.1);
-  }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(5,150,105,.4); }
+  50%       { box-shadow: 0 0 0 5px rgba(5,150,105,.0); }
 }
 
 /* ── Typing cursor blink ── */
@@ -53,44 +30,41 @@
   50%       { opacity: 0; }
 }
 
-/* ── Hero staggered entrance bindings ── */
-.hero-badge    { animation: fadeInUp 0.6s ease both; }
-.hero-name     { animation: fadeInUp 0.7s ease 0.1s both; }
-.hero-title    { animation: fadeInUp 0.7s ease 0.2s both; }
-.hero-desc     { animation: fadeInUp 0.7s ease 0.3s both; }
-.hero-stats    { animation: fadeInUp 0.7s ease 0.4s both; }
-.hero-buttons  { animation: fadeInUp 0.7s ease 0.5s both; }
-.hero-socials  { animation: fadeInUp 0.7s ease 0.6s both; }
-.hero-visual   { animation: fadeInRight 0.8s ease 0.3s both; }
-
-/* ── Floating ambient background shapes ── */
-.shape {
-  animation: float 8s ease-in-out infinite;
+/* ── Photo ring slow spin ── */
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
-.shape-1 { animation-delay: 0s; }
-.shape-2 { animation-delay: 3s; }
-.shape-3 { animation-delay: 1.5s; }
 
-/* ── Badge availability dot ── */
-.badge-dot {
-  animation: pulse 2s ease infinite;
-}
+/* ── Hero staggered entrance ── */
+.hero-badge    { animation: fadeInDown 0.55s ease both; }
+.hero-greeting { animation: fadeInUp  0.55s ease 0.05s both; }
+.hero-name     { animation: fadeInUp  0.6s  ease 0.1s  both; }
+.hero-title    { animation: fadeInUp  0.6s  ease 0.18s both; }
+.hero-desc     { animation: fadeInUp  0.6s  ease 0.26s both; }
+.hero-stats    { animation: fadeInUp  0.6s  ease 0.34s both; }
+.hero-buttons  { animation: fadeInUp  0.6s  ease 0.42s both; }
+.hero-socials  { animation: fadeInUp  0.6s  ease 0.5s  both; }
+.hero-visual   { animation: fadeInRight 0.75s ease 0.2s both; }
+
+/* ── Availability dot pulse ── */
+.badge-dot { animation: pulse 2s ease infinite; }
 
 /* ── Typing cursor ── */
 .cursor {
   display: inline-block;
-  width: 3px;
-  height: 1.2em;
+  width: 2.5px;
+  height: 1.1em;
   background: var(--accent);
   margin-left: 2px;
   vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
 }
 
-/* ── Scroll-reveal (IntersectionObserver adds .visible) ── */
+/* ── Scroll-reveal ── */
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(22px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
