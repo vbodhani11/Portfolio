@@ -29,10 +29,10 @@ const htmlEl       = document.documentElement;
 const PHRASES = [
   'Software Engineer',
   'Full-Stack Developer',
-  'SAP ABAP Expert',
-  'AI/ML Engineer',
+  'Backend Engineer',
   'React + FastAPI Dev',
-  'ERP Integration Specialist',
+  'Applied AI Engineer',
+  'Python Developer',
 ];
 
 let phraseIdx = 0;
@@ -191,7 +191,7 @@ scrollTopBtn.addEventListener('click', scrollToTop);
 function initPhotoSwitcher() {
   const slides = document.querySelectorAll('.photo-slide');
   const dots   = document.querySelectorAll('.photo-dot');
-  if (!slides.length) return;
+  if (slides.length <= 1) return;
 
   let current = 0;
   let timer;
